@@ -38,10 +38,10 @@ let questions = [
         question: "What relation was Sirus Black to Harry?",
         answer: "Godfather",
         options: [
-            "Chaser",
-            "Beater",
-            "Seeker",
-            "Keeper"
+            "Godfather",
+            "Father",
+            "Grandpa",
+            "Uncle"
         ]
     },
 ];
