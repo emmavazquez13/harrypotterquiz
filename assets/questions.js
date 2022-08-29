@@ -1,47 +1,31 @@
-//creating an array and passing the number, questions, options, and answers 
-let questions = [
+var questions = [
     {
-        numb: 1, 
-        question: "What were Harry Potters parents names?",
-        answer: "James and Lily",
-        options: [
-            "Ryan and Mary",
-            "James and Lily",
-            "Patrick and Rose",
-            "Jerry and Lily"
-        ]
+      title: "What were Harry Potters parents names?",
+      multiChoice: ["Ryan and Mary", "James and Lily", "Patrick and Rose", "Jerry and Lily"],
+      answer: "James and Lily"
     },
+  
     {
-        numb: 2, 
-        question: "What was the name of Harry Potters owl?",
-        answer: "Hedwig",
-        options: [
-            "Hedwig",
-            "Ruffles",
-            "Katie",
-            "Ron"
-        ]
+      title: "What was the name of Harry Potters owl?",
+      multiChoice: ["Hedwig", "Ruffles", "Katie", "Ron"],
+      answer: "Hedwig"
     },
+  
     {
-        numb: 3, 
-        question: "What position did Harry play in Quidditch?",
-        answer: "Seeker",
-        options: [
-            "Chaser",
-            "Beater",
-            "Seeker",
-            "Keeper"
-        ]
+      title: "What position did Harry play in Quidditch?",
+      multiChoice: ["Chaser", "Seeker", "Beater", "Keeper"],
+      answer: "Seeker"
     },
+  
     {
-        numb: 4, 
-        question: "What relation was Sirus Black to Harry?",
-        answer: "Godfather",
-        options: [
-            "Godfather",
-            "Father",
-            "Grandpa",
-            "Uncle"
-        ]
+      title: "What relation was Sirus Black to Harry?",
+      multiChoice: ["Father", "Grandparent", "Uncle", "Godfather"],
+      answer: "Godfather"
     },
-];
+  
+    {
+      title: "How does Harry catch his first snitch?",
+      multiChoice: ["His Broom", "His feet", "In his mouth", "His hands"],
+      answer: "In his"
+    }
+  ];
