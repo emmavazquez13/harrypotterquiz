@@ -1,5 +1,9 @@
 # harrypotterquiz
  A timed quiz using HTML, CSS, and JavaScript
+ 
+ https://github.com/emmavazquez13/harrypotterquiz
+ https://emmavazquez13.github.io/harrypotterquiz/
+ 
 <<<<<<< HEAD
 
 =======
