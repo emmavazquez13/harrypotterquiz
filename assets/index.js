@@ -35,7 +35,6 @@ function setTime() {
     } 
   }, 1000);
 }
-
 // This funtion will let the user go back and restart the quiz 
 function goBackBtn() {
     let backBtn = document.createElement("input");
@@ -60,9 +59,7 @@ function clearScoresBtn() {
     })
     scoresDiv.append(clearBtn)
   }
-  
-
-
+  // This funtion displays questions 
 function displayQuestions() {
   removeEls(startButton);
 
@@ -98,7 +95,7 @@ function displayQuestions() {
   }
 }
 
-
+// This funtion will capture the users score 
 function captureUserScore() {
   timer.remove();
   choices.textContent = "";
@@ -147,19 +144,8 @@ const removeEls = (...els) => {
   for (let el of els) el.remove();
 }
 
-function displayAllScores() {
-  removeEls(timer, startButton, results);
-  let scoresArray = defineScoresArray(storedArray, emptyArray);
 
-  scoresArray.forEach(obj => {
-    let initials = obj.initials;
-    let storedScore = obj.score;
-    let resultsP = document.createElement("p");
-    resultsP.innerText = `${initials}: ${storedScore}`;
-    scoresDiv.append(resultsP);
-  });
-}
-
+// This funtion will help view the scores 
 function viewScores() {
   viewScoresBtn.addEventListener("click", function(event) {
     event.preventDefault();
@@ -171,6 +157,20 @@ function viewScores() {
   });
 }
 
+// This funtion helps with the displaying of the scores on the local storage
+function displayAllScores() {
+    removeEls(timer, startButton, results);
+    let scoresArray = defineScoresArray(storedArray, emptyArray);
+  
+    scoresArray.forEach(obj => {
+      let initials = obj.initials;
+      let storedScore = obj.score;
+      let resultsP = document.createElement("p");
+      resultsP.innerText = `${initials}: ${storedScore}`;
+      scoresDiv.append(resultsP);
+    });
+  }
+  
 
 
 
