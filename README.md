@@ -12,3 +12,5 @@ WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
+
+<img width="782" alt="Screen Shot 2022-08-28 at 8 27 10 PM" src="https://user-images.githubusercontent.com/109707981/187105297-3cbcd479-5255-4f3a-a2e0-71f755b274d9.png">
