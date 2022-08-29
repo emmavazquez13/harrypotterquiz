@@ -1,22 +1,28 @@
+// highscores section 
 let scoresDiv = document.getElementById("scores");
 let buttonsDiv = document.getElementById("buttons")
 let viewScoresBtn = document.getElementById("viewScores")
-let startButton = document.getElementById("startButton");
-let results = document.getElementById("results");
+// arrays for highscores and for local storage 
 let emptyArray = [];
+let storedArray = JSON.parse(window.localStorage.getItem("highScores"));
 let score = 0
+// time 
 let secondsLeft = 76;
 let timer = document.getElementById("timer");
-let storedArray = JSON.parse(window.localStorage.getItem("highScores"));
-
-var questionDiv = document.getElementById("question");
+//choices section 
 var choices = document.getElementById("choices");
+let results = document.getElementById("results");
+//start button 
+let startButton = document.getElementById("startButton");
+startButton.addEventListener("click", setTime);
+//questions
+var questionDiv = document.getElementById("question");
 var questionCount = 0;
 
-startButton.addEventListener("click", setTime);
 
 
 
+// This funtion will set the timer as soon as quiz is started 
 function setTime() {
   displayQuestions();
   let timerInterval = setInterval(function() {
@@ -29,6 +35,33 @@ function setTime() {
     } 
   }, 1000);
 }
+
+// This funtion will let the user go back and restart the quiz 
+function goBackBtn() {
+    let backBtn = document.createElement("input");
+    backBtn.setAttribute("type", "button");
+    backBtn.setAttribute("value", "Go Back");
+    backBtn.addEventListener("click", function(event){
+      event.preventDefault();
+      window.location.reload();
+    })
+    buttonsDiv.append(backBtn)
+  }
+
+// This funciton will clear all scores from local drive 
+function clearScoresBtn() {    
+    let clearBtn = document.createElement("input");
+    clearBtn.setAttribute("type", "button");
+    clearBtn.setAttribute("value", "Clear Scores");
+    clearBtn.addEventListener("click", function(event){
+      event.preventDefault();
+      removeEls(scoresDiv);
+      window.localStorage.removeItem("highScores");
+    })
+    scoresDiv.append(clearBtn)
+  }
+  
+
 
 function displayQuestions() {
   removeEls(startButton);
@@ -138,28 +171,7 @@ function viewScores() {
   });
 }
 
-function clearScoresBtn() {    
-  let clearBtn = document.createElement("input");
-  clearBtn.setAttribute("type", "button");
-  clearBtn.setAttribute("value", "Clear Scores");
-  clearBtn.addEventListener("click", function(event){
-    event.preventDefault();
-    removeEls(scoresDiv);
-    window.localStorage.removeItem("highScores");
-  })
-  scoresDiv.append(clearBtn)
-}
 
-function goBackBtn() {
-  let backBtn = document.createElement("input");
-  backBtn.setAttribute("type", "button");
-  backBtn.setAttribute("value", "Go Back");
-  backBtn.addEventListener("click", function(event){
-    event.preventDefault();
-    window.location.reload();
-  })
-  buttonsDiv.append(backBtn)
-}
 
 
 viewScores();
