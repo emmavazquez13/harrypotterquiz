@@ -47,18 +47,7 @@ function goBackBtn() {
     buttonsDiv.append(backBtn)
   }
 
-// This funciton will clear all scores from local drive 
-function clearScoresBtn() {    
-    let clearBtn = document.createElement("input");
-    clearBtn.setAttribute("type", "button");
-    clearBtn.setAttribute("value", "Clear Scores");
-    clearBtn.addEventListener("click", function(event){
-      event.preventDefault();
-      removeEls(scoresDiv);
-      window.localStorage.removeItem("highScores");
-    })
-    scoresDiv.append(clearBtn)
-  }
+
   // This funtion displays questions 
 function displayQuestions() {
   removeEls(startButton);
@@ -156,6 +145,19 @@ function viewScores() {
     goBackBtn();
   });
 }
+
+// This funciton will clear all scores from local drive 
+function clearScoresBtn() {    
+    let clearBtn = document.createElement("input");
+    clearBtn.setAttribute("type", "button");
+    clearBtn.setAttribute("value", "Clear Scores");
+    clearBtn.addEventListener("click", function(event){
+      event.preventDefault();
+      removeEls(scoresDiv);
+      window.localStorage.removeItem("highScores");
+    })
+    scoresDiv.append(clearBtn)
+  }
 
 // This funtion helps with the displaying of the scores on the local storage
 function displayAllScores() {
